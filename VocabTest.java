@@ -49,8 +49,7 @@ public class VocabTest {
         assertTrue(v.getWordsThatCanFollow("hello").isEmpty());
 
     }
-  
 
-    
+    //comment
 
 }
