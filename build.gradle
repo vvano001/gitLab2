@@ -23,18 +23,18 @@ test {
 
 }
 
-task reports (dependsOn: ['test', 'javadoc'] {}
+task reports (dependsOn: ['test', 'javadoc'])
 
-task copyDocs {
-     from "build/docs"
-     into "build/gh-pages/gitLab2/docs/"
+task copyDocs (type: Copy) {
+     from(file("build/docs"))
+     into(file("build/gh-pages/gitLab2/docs/"))
 }
 
-task copyReports {
-     from "build/reports"
-     into "build/gh-pages/gitLab2/reports/"
+task copyReports (type: Copy) {
+     from(file("build/reports"))
+     into(file("build/gh-pages/gitLab2/reports/"))
 }
 
-task deployReports (dependsOn: ['reports', 'copyDocs', 'copyReports') {
+task deployReports (dependsOn: ['reports', 'copyDocs', 'copyReports']) {
      
 }
